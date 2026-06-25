@@ -76,3 +76,65 @@ button.ghost:hover { border-color: var(--accent); }
 }
 
 .layer.final pre { border-color: var(--accent); }
+
+details.layers-collapsed {
+  margin-bottom: 12px;
+}
+
+details.layers-collapsed > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding: 6px 0;
+  user-select: none;
+}
+
+details.layers-collapsed > summary::-webkit-details-marker { display: none; }
+
+details.layers-collapsed > summary::before {
+  content: "▸ ";
+  color: var(--accent);
+}
+
+details.layers-collapsed[open] > summary::before { content: "▾ "; }
+
+details.layers-collapsed > summary:hover { color: var(--text); }
+
+details.layers-collapsed[open] > summary { margin-bottom: 10px; }
+
+#urls:not(:empty) {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.url-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.url-text {
+  flex: 1;
+  min-width: 0;
+  color: var(--accent);
+  font-family: "Consolas", "SF Mono", monospace;
+  font-size: 12px;
+  word-break: break-all;
+  text-decoration: none;
+}
+
+.url-text:hover { text-decoration: underline; }
+
+button.url-copy {
+  flex-shrink: 0;
+  padding: 4px 12px;
+}
