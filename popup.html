@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Base64 Decoder</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>Base64 Decoder</h1>
+    <div class="mode" role="tablist" aria-label="Mode">
+      <button id="mode-decode" class="mode-btn active" role="tab" aria-selected="true">Decode</button>
+      <button id="mode-encode" class="mode-btn" role="tab" aria-selected="false">Encode</button>
+    </div>
+  </header>
+
+  <label class="field-label" for="input">Input</label>
+  <textarea id="input" placeholder="Paste Base64 text here…" spellcheck="false" autofocus></textarea>
+
+  <div class="toolbar">
+    <label class="checkbox">
+      <input type="checkbox" id="url-safe" />
+      URL-safe
+    </label>
+    <label class="checkbox" id="recursive-label">
+      <input type="checkbox" id="recursive" checked />
+      Recursive
+    </label>
+    <div class="spacer"></div>
+    <button id="clear" class="ghost">Clear</button>
+    <button id="copy" class="ghost">Copy</button>
+    <button id="open-window" class="ghost" title="Open result in a new window">↗</button>
+  </div>
+
+  <label class="field-label" for="output">Output</label>
+  <textarea id="output" placeholder="Result appears here…" spellcheck="false" readonly></textarea>
+
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
